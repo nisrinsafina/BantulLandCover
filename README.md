@@ -75,10 +75,10 @@ Penjelasan detail tiap langkah ada di [`docs/LANGKAH_PENGERJAAN.md`](docs/LANGKA
 </p>
 
 ### Hasil Analisis Indeks Spektral
-| NDVI (*Vegetation* / Kerapatan Vegetasi) | NDWI (*Water* / Kerapatan Air) |
+| NDVI (Vegetation) | NDWI (Water) |
 | :---: | :---: |
 | <img src="docs/peta/NDVI.png" width="100%" alt="NDVI"> | <img src="docs/peta/NDWI.png" width="100%" alt="NDWI"> |
-| **NDBI (*Built-up* / Kerapatan Bangunan)** | **NDCI (*Chlorophyll* / Klorofil Air)** |
+| **NDBI (Built-up)** | **NDCI (Cloud)** |
 | <img src="docs/peta/NDBI.png" width="100%" alt="NDBI"> | <img src="docs/peta/NDCI.png" width="100%" alt="NDCI"> |
 
 ---
