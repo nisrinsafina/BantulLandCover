@@ -69,28 +69,17 @@ Penjelasan detail tiap langkah ada di [`docs/LANGKAH_PENGERJAAN.md`](docs/LANGKA
 
 ## Hasil Peta
 
+### Peta Tutupan Lahan (Land Cover)
 <p align="center">
   <img src="docs/peta/TUTUPAN_LAHAN.png" width="98%" alt="Peta Tutupan Lahan Kab. Bantul">
 </p>
-<p align="center">
-  <em>Peta Tutupan Lahan Kab. Bantul</em>
-</p>
 
-<p align="center">
-  <img src="docs/peta/NDVI.png" width="49%" alt="NDVI">
-  <img src="docs/peta/NDWI.png" width="49%" alt="NDWI">
-</p>
-<p align="center">
-  <em>Kiri: NDVI. Kanan: NDWI</em>
-</p>
-
-<p align="center">
-  <img src="docs/peta/NDBI.png" width="49%" alt="NBVI">
-  <img src="docs/peta/NDCI.png" width="49%" alt="NCWI">
-</p>
-<p align="center">
-  <em>Kiri: NDBI. Kanan: NDCI</em>
-</p>
+### Hasil Analisis Indeks Spektral
+| NDVI (*Vegetation* / Kerapatan Vegetasi) | NDWI (*Water* / Kerapatan Air) |
+| :---: | :---: |
+| <img src="docs/peta/NDVI.png" width="100%" alt="NDVI"> | <img src="docs/peta/NDWI.png" width="100%" alt="NDWI"> |
+| **NDBI (*Built-up* / Kerapatan Bangunan)** | **NDCI (*Chlorophyll* / Klorofil Air)** |
+| <img src="docs/peta/NDBI.png" width="100%" alt="NDBI"> | <img src="docs/peta/NDCI.png" width="100%" alt="NDCI"> |
 
 ---
 
