@@ -41,7 +41,7 @@ Citra Sentinel-2 Level-2A dipotong sesuai batas kabupaten, lalu dihitung empat i
 
 ---
 
-## Workfloe
+## Workflow
 
 ```mermaid
 flowchart LR
