@@ -67,38 +67,29 @@ Penjelasan detail tiap langkah ada di [`docs/LANGKAH_PENGERJAAN.md`](docs/LANGKA
 
 ---
 
-## Tangkapan Layar
+## Hasil Peta
 
 <p align="center">
-  <img src="docs/screenshots/01_peta_interaktif.png" width="49%" alt="Peta tutupan lahan interaktif">
-  <img src="docs/screenshots/02_indeks_ndvi.png" width="49%" alt="Layer indeks NDVI">
+  <img src="docs/peta/TUTUPAN_LAHAN.png" width="98%" alt="Peta Tutupan Lahan Kab. Bantul">
 </p>
 <p align="center">
-  <em>Kiri: peta tutupan lahan 4 kelas. Kanan: layer indeks NDVI dengan legenda gradasi.</em>
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/03_choropleth_kecamatan.png" width="49%" alt="Choropleth per kecamatan">
-  <img src="docs/screenshots/04_popup_titik.png" width="49%" alt="Popup informasi titik">
-</p>
-<p align="center">
-  <em>Kiri: choropleth statistik zonal per kecamatan. Kanan: popup nilai indeks pada titik yang diklik.</em>
+  <em>Peta Tutupan Lahan Kab. Bantul</em>
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/05_zonal_statistics.png" width="49%" alt="Tabel zonal statistics">
-  <img src="docs/screenshots/06_threshold_metode.png" width="49%" alt="Tab threshold dan metode">
+  <img src="docs/peta/NDVI.png" width="49%" alt="NDVI">
+  <img src="docs/peta/NDWI.png" width="49%" alt="NDWI">
 </p>
 <p align="center">
-  <em>Kiri: tabel zonal statistics. Kanan: aturan klasifikasi dan histogram threshold.</em>
+  <em>Kiri: NDVI. Kanan: NDWI</em>
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/07_cetak_peta.png" width="49%" alt="Menu cetak peta">
-  <img src="docs/screenshots/08_hasil_peta_cetak.png" width="49%" alt="Hasil peta cetak A3">
+  <img src="docs/peta/NDBI.png" width="49%" alt="NBVI">
+  <img src="docs/peta/NDCI.png" width="49%" alt="NCWI">
 </p>
 <p align="center">
-  <em>Kiri: pengaturan peta cetak. Kanan: contoh hasil peta cetak (legenda, skala, panah utara, judul, sumber data).</em>
+  <em>Kiri: NDBI. Kanan: NDCI</em>
 </p>
 
 ---
