@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌿 WebGIS Tutupan Lahan Kabupaten Bantul
+# WebGIS Tutupan Lahan Kabupaten Bantul
 
 **Analisis indeks spektral (NDVI, NDBI, NDWI, NDCI) dan klasifikasi tutupan lahan dari citra Sentinel-2 Level-2A, disajikan dalam aplikasi WebGIS interaktif berbasis R Shiny dan Leaflet.**
 
@@ -10,7 +10,7 @@
 ![Sentinel-2](https://img.shields.io/badge/Sentinel--2-L2A-0277bd)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-### [🌐 Buka Aplikasi Web](https://nisrinsafina.shinyapps.io/bantul-webgis/) · [📖 Langkah Pengerjaan](docs/LANGKAH_PENGERJAAN.md) · [📝 Riwayat Perubahan](CHANGELOG.md)
+### [🌐 Buka Aplikasi Web](https://nisrinsafina.shinyapps.io/bantul-landcover/) · [📖 Langkah Pengerjaan](docs/LANGKAH_PENGERJAAN.md) · [📝 Riwayat Perubahan](CHANGELOG.md)
 
 </div>
 
