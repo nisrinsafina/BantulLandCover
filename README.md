@@ -124,7 +124,7 @@ Klik sebuah kecamatan untuk menyorot wilayahnya dan menampilkan grafik detailnya
 Klik titik mana pun di peta untuk melihat nilai NDVI, NDBI, NDWI, NDCI, kelas tutupan lahan, serta statistik zonal kecamatan tempat titik itu berada.
 
 <p align="center">
-  <img src="docs/fitur/fitur_05_popup_titik.png" width="80%" alt="Popup informasi titik">
+  <img src="docs/fitur/fitur_05_popup_titik.png" width="50%" alt="Popup informasi titik">
 </p>
 
 ### 4. Alat Ukur
