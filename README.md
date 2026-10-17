@@ -173,7 +173,7 @@ Menghasilkan peta cetak A3 atau A4 (PNG, PDF, JPEG) dengan judul, legenda, skala
 Saat menggeser kursor, pop up tabel kecamatan akan muncul tanpa di klik.
 
 <p align="center">
-  <img src="docs/fitur/fitur_11_hover_popup.gif" width="80%" alt="Hover Pop Up">
+  <img src="docs/fitur/fitur_11_hover_popup.gif" width="60%" alt="Hover Pop Up">
 </p>
 
 ---
