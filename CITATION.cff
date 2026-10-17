@@ -13,7 +13,7 @@ authors:
     family-names: "Azalia"
     affiliation: "Institut Teknologi Sepuluh Nopember"
 repository-code: "https://github.com/nisrinsafina/Kabupaten-Bantul---Land-Cover"
-url: "https://nisrinsafina.shinyapps.io/https://nisrinsafina.shinyapps.io/bantul-webgis//"
+url: "https://nisrinsafina.shinyapps.io/https://nisrinsafina.shinyapps.io/bantul-landcover//"
 abstract: >-
   Aplikasi WebGIS interaktif berbasis R Shiny dan Leaflet untuk menampilkan
   indeks spektral (NDVI, NDBI, NDWI, NDCI), klasifikasi tutupan lahan empat
