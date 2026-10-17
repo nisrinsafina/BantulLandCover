@@ -1,8 +1,29 @@
+# ---- R / RStudio ----
 .Rproj.user/
 .Rhistory
 .RData
+.Ruserdata
+*.Rcheck/
+
+# ---- shinyapps.io (berisi info akun, jangan di-commit) ----
 rsconnect/
+
+# ---- Data mentah dan hasil antara (terlalu besar untuk GitHub, batas 100 MB/berkas) ----
+# Hasil olahan yang dipakai aplikasi ada di data_deploy/ dan TIDAK diabaikan.
 01_Satellite_Data/
 02_Administration_Data/
 03_Cropped/
+04_Index/
+05_Classification/
+06_WebGIS/
 *.SAFE/
+*.jp2
+*.gdb/
+*.zip
+
+# ---- File sistem dan sementara ----
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+~$*

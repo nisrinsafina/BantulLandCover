@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "Jika Anda menggunakan proyek ini, silakan sitasi dengan format berikut."
+title: "WebGIS Tutupan Lahan Kabupaten Bantul: Analisis Indeks Spektral Sentinel-2"
+type: software
+version: 1.0.0
+date-released: 2026-10-17
+license: MIT
+authors:
+  - given-names: "Nisrin Finira"
+    family-names: "Safina"
+    affiliation: "Institut Teknologi Sepuluh Nopember"
+  - given-names: "Avisa"
+    family-names: "Azalia"
+    affiliation: "Institut Teknologi Sepuluh Nopember"
+repository-code: "https://github.com/nisrinsafina/Kabupaten-Bantul---Land-Cover"
+url: "https://nisrinsafina.shinyapps.io/https://nisrinsafina.shinyapps.io/bantul-webgis//"
+abstract: >-
+  Aplikasi WebGIS interaktif berbasis R Shiny dan Leaflet untuk menampilkan
+  indeks spektral (NDVI, NDBI, NDWI, NDCI), klasifikasi tutupan lahan empat
+  kelas (vegetasi, bangunan, perairan, awan), dan statistik zonal per
+  kecamatan di Kabupaten Bantul, D.I. Yogyakarta, dari citra Sentinel-2
+  Level-2A.
+keywords:
+  - Sentinel-2
+  - NDVI
+  - NDBI
+  - NDWI
+  - NDCI
+  - tutupan lahan
+  - zonal statistics
+  - WebGIS
+  - R Shiny
+  - Leaflet
+  - Bantul
