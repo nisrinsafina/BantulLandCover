@@ -107,6 +107,7 @@ Aplikasi memiliki enam tab: **Peta Interaktif**, **Zonal Statistics**, **Thresho
 Tiga peta dasar tersedia: OpenStreetMap, Esri World Imagery, dan Google Satelit. Citra satelit berguna untuk mencocokkan hasil klasifikasi dengan kondisi nyata.
 
 <p align="center">
+  <img src="docs/fitur/fitur_01.5_osm.png" width="45%" alt="Pilihan basemap OSM">
   <img src="docs/fitur/fitur_02_esri.png" width="45%" alt="Pilihan basemap Esri">
   <img src="docs/fitur/fitur_03_googlesat.png" width="45%" alt="Pilihan basemap Google Satellite">
 </p>
