@@ -5,11 +5,10 @@
 .Ruserdata
 *.Rcheck/
 
-# ---- shinyapps.io (berisi info akun, jangan di-commit) ----
+# ---- shinyapps.io ----
 rsconnect/
 
-# ---- Data mentah dan hasil antara (terlalu besar untuk GitHub, batas 100 MB/berkas) ----
-# Hasil olahan yang dipakai aplikasi ada di data_deploy/ dan TIDAK diabaikan.
+# ---- Data mentah dan hasil antara ----
 01_Satellite_Data/
 02_Administration_Data/
 03_Cropped/
