@@ -1,24 +1,24 @@
-# =============================================================================
 # DEPLOY KE SHINYAPPS.IO
-#
+
 # Langkah:
-#   1. Daftar di https://www.shinyapps.io
+#   1. Sign Up di https://www.shinyapps.io
 #   2. Buka Account > Tokens > Show, lalu salin name, token, dan secret
 #   3. Isi tiga nilai di bawah ini (cukup dijalankan SEKALI)
 #   4. Ubah folder_repo ke lokasi repositori di komputermu
 #   5. Jalankan seluruh script ini
-#
-# PENTING: JANGAN commit token dan secret ke GitHub!
+
+
 # Setelah akun terdaftar, kosongkan kembali nilai-nilai di bawah sebelum git commit.
 # =============================================================================
 
 # --- ISI BAGIAN INI ----------------------------------------------------------
-akun   <- ""   # name   (username shinyapps.io kamu)
+akun   <- ""   # name   (username shinyapps.io)
 token  <- ""   # token
 secret <- ""   # secret
 
-folder_repo <- "C:/Users/NAMAKAMU/Documents/Kabupaten-Bantul---Land-Cover"
-nama_app    <- "bantul-geographic-information-system"
+folder_repo <- "C:/Users/NAMAKAMU/Documents/bantul-gis"
+nama_app    <- "bantul-landcover"
+
 # Link akhir: https://<akun>.shinyapps.io/<nama_app>/
 # -----------------------------------------------------------------------------
 
