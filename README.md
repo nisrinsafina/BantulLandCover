@@ -140,7 +140,7 @@ Ukur jarak dan luas langsung di peta.
 Pilih kecamatan dari dropdown, peta otomatis zoom ke wilayah tersebut.
 
 <p align="center">
-  <img src="docs/fitur/fitur_07_pencarian_zoom.gif" width="80%" alt="Zoom ke kecamatan lewat dropdown">
+  <img src="docs/fitur/fitur_07_pencarian_zoom.gif" width="50%" alt="Zoom ke kecamatan lewat dropdown">
 </p>
 
 ### 6. Tab Zonal Statistics
@@ -172,7 +172,7 @@ Menghasilkan peta cetak A3 atau A4 (PNG, PDF, JPEG) dengan judul, legenda, skala
 Saat menggeser kursor, pop up tabel kecamatan akan muncul tanpa di klik.
 
 <p align="center">
-  <img src="docs/fitur/fitur_11_unduh_data.png" width="90%" alt="Hover Pop Up">
+  <img src="docs/fitur/fitur_11_hover_popup.gif" width="50%" alt="Hover Pop Up">
 </p>
 
 ---
