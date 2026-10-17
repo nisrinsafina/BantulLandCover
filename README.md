@@ -16,13 +16,13 @@
 
 ---
 
-## Tentang Proyek
+## About Project
 
 Repositori ini berisi tugas **Evaluasi Tengah Semester (ETS) Pemrograman Spasial (CM234529) Kelas A**, Institut Teknologi Sepuluh Nopember (ITS), dengan wilayah studi **Kabupaten Bantul, Daerah Istimewa Yogyakarta**.
 
 Citra Sentinel-2 Level-2A dipotong sesuai batas kabupaten, lalu dihitung empat indeks spektral. Hasilnya dipakai untuk mengklasifikasikan tutupan lahan menjadi empat kelas (vegetasi, bangunan, perairan, awan) dan menghitung statistik zonal untuk 17 kecamatan. Semua hasil ditampilkan dalam WebGIS yang bisa dibuka langsung dari browser, termasuk fitur **cetak peta** lengkap dengan legenda, skala, panah utara, judul, dan sumber data.
 
-## Daftar Isi
+## List of Items
 
 1. [Alur Kerja](#alur-kerja)
 2. [Hasil Peta](#hasil-peta)
@@ -41,7 +41,7 @@ Citra Sentinel-2 Level-2A dipotong sesuai batas kabupaten, lalu dihitung empat i
 
 ---
 
-## Alur Kerja
+## Workfloe
 
 ```mermaid
 flowchart LR
@@ -67,7 +67,7 @@ Penjelasan detail tiap langkah ada di [`docs/LANGKAH_PENGERJAAN.md`](docs/LANGKA
 
 ---
 
-## Hasil Peta
+## Results
 
 ### Peta Tutupan Lahan (Land Cover)
 <p align="center">
