@@ -77,9 +77,9 @@ Penjelasan detail tiap langkah ada di [`docs/LANGKAH_PENGERJAAN.md`](docs/LANGKA
 ### Hasil Analisis Indeks Spektral
 | NDVI (Vegetation) | NDWI (Water) |
 | :---: | :---: |
-| <img src="docs/peta/NDVI.png" width="90%" alt="NDVI"> | <img src="docs/peta/NDWI.png" width="100%" alt="NDWI"> |
+| <img src="docs/peta/NDVI.png" width="92%" alt="NDVI"> | <img src="docs/peta/NDWI.png" width="100%" alt="NDWI"> |
 | **NDBI (Built-up)** | **NDCI (Cloud)** |
-| <img src="docs/peta/NDBI.png" width="90%" alt="NDBI"> | <img src="docs/peta/NDCI.png" width="100%" alt="NDCI"> |
+| <img src="docs/peta/NDBI.png" width="92%" alt="NDBI"> | <img src="docs/peta/NDCI.png" width="100%" alt="NDCI"> |
 
 ---
 
@@ -182,10 +182,10 @@ Saat menggeser kursor, pop up tabel kecamatan akan muncul tanpa di klik.
 
 | Indeks | Nama Lengkap | Rumus | Kegunaan |
 |---|---|---|---|
-| **NDVI** | Normalized Difference Vegetation Index | (B08 − B04) / (B08 + B04) | Vegetasi |
-| **NDBI** | Normalized Difference Built-up Index | (B11 − B08) / (B11 + B08) | Area terbangun |
-| **NDWI** | Normalized Difference Water Index | (B03 − B08) / (B03 + B08) | Perairan |
-| **NDCI** | Normalized Difference Cloud Index | (B04 − B08) / (B04 + B08) | Awan (nilai mendekati 0) |
+| **NDVI** | Normalized Difference Vegetation Index | `(B08 − B04) / (B08 + B04)` | Vegetasi |
+| **NDBI** | Normalized Difference Built-up Index | `(B11 − B08) / (B11 + B08)` | Area terbangun |
+| **NDWI** | Normalized Difference Water Index | `(B03 − B08) / (B03 + B08)` | Perairan |
+| **NDCI** | Normalized Difference Cloud Index | `(B04 − B08) / (B04 + B08)` | Awan (nilai mendekati 0) |
 
 Keterangan band Sentinel-2: **B02** = Biru, **B03** = Hijau, **B04** = Merah, **B05** = Red Edge 1, **B08** = NIR, **B11** = SWIR 1.
 
@@ -226,7 +226,7 @@ Nilai threshold tersimpan di [`output/threshold_klasifikasi.csv`](output/thresho
 | Citra satelit | [Copernicus Data Space Ecosystem](https://dataspace.copernicus.eu/) | Sentinel-2B MSI Level-2A, tile `T49MDM`, orbit relatif `R089`, perekaman **4 Oktober 2026** |
 | Batas administrasi | [Ina-Geoportal (BIG)](https://tanahair.indonesia.go.id/portal-web) | RBI 25K Kabupaten Bantul (layer `ADMINISTRASI_AR_KABKOTA` dan `ADMINISTRASI_AR_KECAMATAN`) |
 
-> Data mentah (citra `.SAFE` dan geodatabase `.gdb`) berukuran besar dan **tidak disertakan** di repositori ini. Hasil olahan yang sudah siap pakai ada di folder [`data_deploy/`](data_deploy/).
+> Data mentah (citra `.SAFE` dan geodatabase `.gdb`) ini ukurannya besar sehingga **tidak disertakan** di repositori ini :)) tetapi hasil olahan yang sudah siap pakai ada di folder [`data_deploy/`](data_deploy/).
 
 ---
 
@@ -234,33 +234,33 @@ Nilai threshold tersimpan di [`output/threshold_klasifikasi.csv`](output/thresho
 
 ```text
 .
-├── app.R                      # Aplikasi WebGIS (Shiny + Leaflet)
-├── dependencies.R             # Daftar package untuk shinyapps.io
+├── app.R                                        # Aplikasi WebGIS (Shiny + Leaflet)
+├── dependencies.R                               # Daftar package untuk shinyapps.io
 ├── analisis/
-│   └── 01_ANALISIS_RASTER.R   # Crop, indeks, klasifikasi, zonal statistics
-├── data_deploy/               # Data siap pakai untuk aplikasi
+│   └── 01_ANALISIS_RASTER.R                     # Crop, indeks, klasifikasi, zonal statistics
+├── data_deploy/                                 # Data siap pakai untuk aplikasi
 │   ├── klasifikasi_tutupan_lahan_bantul.tif
 │   ├── NDVI.tif
 │   ├── NDBI.tif
 │   ├── NDWI.tif
 │   ├── NDCI.tif
-│   ├── hasil_analisis.gpkg    # Batas kabupaten dan kecamatan + atribut statistik
-│   ├── hasil_analisis.rds     # Metadata, threshold, tabel statistik
-│   └── logo_*.png             # Logo untuk peta cetak
-├── output/                    # Tabel hasil (CSV) untuk laporan
+│   ├── hasil_analisis.gpkg                      # Batas kabupaten dan kecamatan + atribut statistik
+│   ├── hasil_analisis.rds                       # Metadata, threshold, tabel statistik
+│   └── logo_*.png                               # Logo ITS dan Teknik Geomatika untuk peta cetak
+├── output/                                      # Tabel hasil (CSV) untuk laporan
 │   ├── zonal_statistics_kecamatan.csv
 │   ├── statistik_kabupaten.csv
 │   ├── luas_tutupan_lahan_kecamatan.csv
 │   └── threshold_klasifikasi.csv
 ├── scripts/
-│   ├── siapkan_data_deploy.R  # Menyalin hasil analisis ke data_deploy/ dan output/
-│   └── deploy_shinyapps.R     # Deploy ke shinyapps.io
+│   ├── siapkan_data_deploy.R                    # Menyalin hasil analisis ke data_deploy/ dan output/
+│   └── deploy_shinyapps.R                       # Deploy ke shinyapps.io
 ├── docs/
-│   ├── LANGKAH_PENGERJAAN.md  # Tutorial berurutan dari data mentah sampai web
-│   └── screenshots/           # Tangkapan layar untuk README
-├── CHANGELOG.md               # Riwayat perubahan
-├── CITATION.cff               # Metadata sitasi
-├── LICENSE                    # Lisensi MIT
+│   ├── LANGKAH_PENGERJAAN.md                    # Tutorial berurutan dari data mentah sampai web
+│   └── screenshots/                             # Tangkapan layar untuk README
+├── CHANGELOG.md                                 # Riwayat perubahan
+├── CITATION.cff                                 # Metadata sitasi
+├── LICENSE                                      # Lisensi MIT
 └── .gitignore
 ```
 
@@ -270,7 +270,7 @@ Nilai threshold tersimpan di [`output/threshold_klasifikasi.csv`](output/thresho
 
 ### Opsi A: Buka langsung di browser
 
-👉 **https://nisrinsafina.shinyapps.io/bantul-webgis/**
+**https://nisrinsafina.shinyapps.io/bantul-webgis/**
 
 ### Opsi B: Jalankan di komputer sendiri (tanpa data mentah)
 
@@ -299,8 +299,6 @@ Cara ini paling mudah karena semua data olahan sudah ada di `data_deploy/`.
    setwd("path/ke/bantul-webgis")
    shiny::runApp()
    ```
-
-> Koneksi internet diperlukan untuk memuat basemap.
 
 ### Opsi C: Ulangi seluruh analisis dari data mentah
 
@@ -381,8 +379,13 @@ Contoh nama kolom: `NDVI_Mean`, `NDBI_Median`, `NDWI_SD`, `NDCI_Max`.
 | Nisrin Finira Safina | 5016241051 |
 | Avisa Azalia | 5016241098 |
 
-**Dosen Pengampu:** Mohammad Rohmaneo Darminto, S.T., M.Sc.
-Departemen Teknik Geomatika, Fakultas Teknik Sipil, Perencanaan, dan Kebumian, Institut Teknologi Sepuluh Nopember, Surabaya, 2026.
+**Dosen Pengampu:**
+Mohammad Rohmaneo Darminto, S.T., M.Sc.
+Departemen Teknik Geomatika
+Fakultas Teknik Sipil, Perencanaan, dan Kebumian
+Institut Teknologi Sepuluh Nopember
+Surabaya
+2026
 
 ## Lisensi
 
