@@ -85,25 +85,95 @@ Penjelasan detail tiap langkah ada di [`docs/LANGKAH_PENGERJAAN.md`](docs/LANGKA
 
 ## Fitur WebGIS
 
-Aplikasi memiliki enam tab:
+Aplikasi memiliki enam tab: **Peta Interaktif**, **Zonal Statistics**, **Threshold dan Metode**, **Cetak Peta**, **Unduh Data**, dan **Tentang**.
 
-| Tab | Isi |
-|---|---|
-| **Peta Interaktif** | Peta Leaflet dengan layer Tutupan Lahan, NDVI, NDBI, NDWI, NDCI, choropleth kecamatan, dan batas administrasi. Ada kotak ringkasan luas tiap kelas, diagram donat komposisi kecamatan terpilih, serta tabel statistik indeks kecamatan terpilih. |
-| **Zonal Statistics** | Tabel statistik zonal per kecamatan (bisa disalin atau diekspor ke CSV dan Excel) dan tabel luas tutupan lahan dalam hektar. |
-| **Threshold dan Metode** | Aturan klasifikasi beserta prioritasnya dan histogram sebaran tiap indeks dengan garis threshold. |
-| **Cetak Peta** | Peta cetak A3 atau A4 (PNG, PDF, JPEG) dengan legenda, skala, panah utara, grid koordinat UTM, inset lokasi, judul, dan sumber data. |
-| **Unduh Data** | Unduh raster GeoTIFF (UTM atau WGS 84) dan vektor GeoPackage. |
-| **Tentang** | Penjelasan metode dan sumber data. |
+### Gambaran Umum Peta Interaktif
 
-Fitur pada peta interaktif:
+<p align="center">
+  <img src="docs/fitur/fitur_01_gambaran_umum.png" width="90%" alt="Gambaran umum tab Peta Interaktif">
+</p>
 
-- Tiga basemap: OpenStreetMap, Esri World Imagery, dan Google Satelit.
-- Layer analisis selalu tampil di atas basemap dan transparansinya bisa diatur.
-- Klik kecamatan untuk menyorot wilayah dan menampilkan grafik detailnya. Klik lagi untuk kembali ke kondisi awal.
-- Klik titik mana pun untuk melihat nilai indeks, kelas tutupan lahan, dan statistik zonal kecamatan terkait.
-- Alat ukur jarak dan luas, mode layar penuh, pencarian lokasi, dan minimap.
-- Dropdown untuk langsung zoom ke kecamatan tertentu.
+| No | Komponen | Fungsi |
+|:--:|---|---|
+| 1 | Panel layer | Menyalakan atau mematikan layer Tutupan Lahan, NDVI, NDBI, NDWI, NDCI, choropleth, dan batas administrasi |
+| 2 | Pilihan basemap | Mengganti peta dasar |
+| 3 | Slider transparansi | Mengatur transparansi layer analisis |
+| 4 | Dropdown kecamatan | Zoom langsung ke kecamatan tertentu |
+| 5 | Alat peta | Ukur jarak dan luas, layar penuh, pencarian lokasi |
+| 6 | Panel informasi | Ringkasan luas kelas, diagram donat, dan tabel statistik kecamatan terpilih |
+
+### 1. Pilihan Basemap
+
+Tiga peta dasar tersedia: OpenStreetMap, Esri World Imagery, dan Google Satelit. Citra satelit berguna untuk mencocokkan hasil klasifikasi dengan kondisi nyata.
+
+<p align="center">
+  <img src="docs/fitur/fitur_02_esri.png" width="45%" alt="Pilihan basemap Esri">
+  <img src="docs/fitur/fitur_03_googlesat.png" width="45%" alt="Pilihan basemap Google Satellite">
+</p>
+
+### 2. Klik Kecamatan
+
+Klik sebuah kecamatan untuk menyorot wilayahnya dan menampilkan grafik detailnya. Klik lagi untuk kembali ke tampilan awal.
+
+<p align="center">
+  <img src="docs/fitur/fitur_04_klik_kecamatan.png" width="80%" alt="Klik kecamatan">
+</p>
+
+### 3. Klik Titik (Popup Nilai Indeks)
+
+Klik titik mana pun di peta untuk melihat nilai NDVI, NDBI, NDWI, NDCI, kelas tutupan lahan, serta statistik zonal kecamatan tempat titik itu berada.
+
+<p align="center">
+  <img src="docs/fitur/fitur_05_popup_titik.png" width="80%" alt="Popup informasi titik">
+</p>
+
+### 4. Alat Ukur
+
+Ukur jarak dan luas langsung di peta.
+
+<p align="center">
+  <img src="docs/fitur/fitur_06_alat_ukur.png" width="80%" alt="Alat ukur jarak dan luas">
+</p>
+
+### 5. Zoom ke Kecamatan
+
+Pilih kecamatan dari dropdown, peta otomatis zoom ke wilayah tersebut.
+
+<p align="center">
+  <img src="docs/fitur/fitur_07_pencarian_zoom.gif" width="80%" alt="Zoom ke kecamatan lewat dropdown">
+</p>
+
+### 6. Tab Zonal Statistics
+
+Tabel Mean, Min, Max, Median, dan SD untuk NDVI, NDBI, NDWI, NDCI di setiap kecamatan, ditambah tabel luas tutupan lahan (hektar). Tabel bisa disalin atau diekspor ke CSV dan Excel.
+
+<p align="center">
+  <img src="docs/fitur/fitur_08_zonal_tabel.png" width="90%" alt="Tab Zonal Statistics">
+</p>
+
+### 7. Tab Threshold dan Metode
+
+Aturan klasifikasi beserta prioritasnya dan histogram sebaran tiap indeks, lengkap dengan garis threshold.
+
+<p align="center">
+  <img src="docs/fitur/fitur_09_threshold.png" width="90%" alt="Tab Threshold dan Metode">
+</p>
+
+### 8. Tab Cetak Peta
+
+Menghasilkan peta cetak A3 atau A4 (PNG, PDF, JPEG) dengan judul, legenda, skala, panah utara, grid koordinat UTM, inset lokasi, dan sumber data.
+
+<p align="center">
+  <img src="docs/fitur/fitur_10_cetak_peta.png" width="90%" alt="Tab Cetak Peta">
+</p>
+
+### 9. Hover Pop Up
+
+Saat menggeser kursor, pop up tabel kecamatan akan muncul tanpa di klik.
+
+<p align="center">
+  <img src="docs/fitur/fitur_11_unduh_data.png" width="90%" alt="Tab Unduh Data">
+</p>
 
 ---
 
