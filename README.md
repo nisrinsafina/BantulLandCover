@@ -368,7 +368,7 @@ Contoh nama kolom: `NDVI_Mean`, `NDBI_Median`, `NDWI_SD`, `NDCI_Max`.
 - **NDCI hanya pendekatan awan.** Bayangan awan dan permukaan sangat terang (misalnya pasir pantai atau atap putih) berpotensi tercampur.
 - **Hanya satu tanggal perekaman** (4 Oktober 2026), sehingga hasil tidak mewakili kondisi musiman.
 - Tugas menyebut paket `rgdal` dan `raster`. Keduanya sudah tidak dipelihara di CRAN, sehingga proyek ini memakai **`sf` dan `terra`** sebagai penggantinya.
-- Paket gratis shinyapps.io memiliki batas memori dan jam aktif. Aplikasi bisa terasa lambat saat pertama dibuka.
+- Paket gratis shinyapps.io memiliki batas memori dan jam aktif. Aplikasi bisa terasa lambat saat pertama dibuka. Maaf :(((
 
 ---
 
