@@ -114,7 +114,7 @@ Tiga peta dasar tersedia: OpenStreetMap, Esri World Imagery, dan Google Satelit.
 
 ### 2. Klik Kecamatan
 
-Klik sebuah kecamatan untuk zoom ke wilayahnya dan menampilkan grafik detailnya. Klik lagi untuk kembali ke tampilan awal.
+Klik sebuah kecamatan untuk menyorot ke wilayahnya dan menampilkan grafik detailnya. Klik lagi untuk kembali ke tampilan awal.
 
 <p align="center">
   <img src="docs/fitur/fitur_04_klik_kecamatan.png" width="80%" alt="Klik kecamatan">
