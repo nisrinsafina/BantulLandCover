@@ -90,7 +90,7 @@ Aplikasi memiliki enam tab: **Peta Interaktif**, **Zonal Statistics**, **Thresho
 ### Gambaran Umum Peta Interaktif
 
 <p align="center">
-  <img src="docs/fitur/fitur_01_gambaran_umum.png" width="70" alt="Gambaran umum tab Peta Interaktif">
+  <img src="docs/fitur/fitur_01_gambaran_umum.png" width="70$" alt="Gambaran umum tab Peta Interaktif">
   <img src="docs/fitur/fitur_12_tampilan_hp.png" width="25%" alt="Tampilan HP Peta Interaktif">
 </p>
 
