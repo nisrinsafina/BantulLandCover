@@ -87,7 +87,7 @@ Penjelasan detail tiap langkah ada di [`docs/LANGKAH_PENGERJAAN.md`](docs/LANGKA
 
 Aplikasi memiliki enam tab: **Peta Interaktif**, **Zonal Statistics**, **Threshold dan Metode**, **Cetak Peta**, **Unduh Data**, dan **Tentang**.
 
-### Gambaran Umum Peta Interaktif
+### Tampilan Utama WebGIS
 
 <p align="center">
   <img src="docs/fitur/fitur_01_gambaran_umum.png" width="75%" alt="Gambaran umum tab Peta Interaktif">
@@ -258,7 +258,8 @@ Nilai threshold tersimpan di [`output/threshold_klasifikasi.csv`](output/thresho
 │   └── deploy_shinyapps.R                       # Deploy ke shinyapps.io
 ├── docs/
 │   ├── LANGKAH_PENGERJAAN.md                    # Tutorial berurutan dari data mentah sampai web
-│   └── screenshots/                             # Tangkapan layar untuk README
+│   └── peta/                                    # Hasil peta-peta
+│   └── fitur/                                   # Fitur-fitur WebGIS
 ├── CHANGELOG.md                                 # Riwayat perubahan
 ├── CITATION.cff                                 # Metadata sitasi
 ├── LICENSE                                      # Lisensi MIT
