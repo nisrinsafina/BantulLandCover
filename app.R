@@ -1034,6 +1034,41 @@ css <- "
 .info-box-content{padding-top:2px;padding-bottom:2px;}
 #preview img{max-width:100%;height:auto;border:1px solid #bbb;background:#fff;}
 .leaflet-container{font-family:'Times New Roman',serif;}
+
+/* ---- pemilih tampilan (header) ---- */
+#mode_menu .dropdown-menu{min-width:210px;}
+#mode_menu .dropdown-menu li.active>a{font-weight:700;background:#e8f5e9;color:#1b5e20;}
+.hp-only{display:none;}
+
+/* ---- MODE HP: aktif otomatis di layar sempit, atau dipilih manual lewat menu Tampilan ---- */
+@media (min-width:768px){
+  body.mode-hp .main-header .logo{width:170px !important;font-size:16px;}
+  body.mode-hp .main-header .navbar{margin-left:170px !important;}
+}
+body.mode-hp .hp-only{display:block;}
+body.mode-hp #mode_menu .mode-text{display:none;}
+body.mode-hp .content-wrapper .content{padding:6px;}
+body.mode-hp .banner{padding:8px 12px;margin-bottom:8px;border-bottom-width:3px;}
+body.mode-hp .banner h1{font-size:15px;letter-spacing:.3px;}
+body.mode-hp .banner p{font-size:11px;}
+body.mode-hp [class*='col-sm-'],body.mode-hp [class*='col-md-'],body.mode-hp [class*='col-lg-']{float:none;width:100%;}
+body.mode-hp #boxes [class*='col-sm-']{float:left;width:50%;}
+body.mode-hp .info-box{min-height:56px;margin-bottom:6px;}
+body.mode-hp .info-box-icon{height:56px;width:50px;line-height:56px;font-size:24px;}
+body.mode-hp .info-box-content{margin-left:56px;}
+body.mode-hp .info-box-text{font-size:10px;}
+body.mode-hp .info-box-number{font-size:14px;}
+body.mode-hp #map{height:calc(100vh - 190px) !important;min-height:340px;}
+body.mode-hp .leaflet-control-layers{max-width:55vw;font-size:12px;}
+body.mode-hp .leaflet-control-minimap{display:none !important;}
+body.mode-hp .leaflet-bar a{width:34px !important;height:34px !important;line-height:34px !important;}
+body.mode-hp .info.legend{font-size:11px;max-width:45vw;padding:4px 6px;}
+body.mode-hp .box{margin-bottom:10px;}
+body.mode-hp .box-body{overflow-x:auto;}
+body.mode-hp .dataTables_wrapper{font-size:12px;overflow-x:auto;}
+body.mode-hp .btn{padding:8px 12px;margin-bottom:6px;}
+body.mode-hp .form-control,body.mode-hp .selectize-input{font-size:16px;}
+body.mode-hp #preview{overflow:auto;}
 "
 
 # menu cetak
@@ -1058,9 +1093,74 @@ layer_ui <- function(pre, sel_raster, sel_batas, sel_choro = FALSE) {
 
 RASTER_FILE_LABEL <- c(lc = "Tutupan_Lahan", NDVI = "NDVI", NDBI = "NDBI", NDWI = "NDWI", NDCI = "NDCI")
 
+# --- Mode tampilan: Otomatis / Desktop / HP --------------------------------------------
+#  Otomatis : layar sempit (HP) -> layout HP; layar lebar -> layout desktop
+#  Desktop  : layout desktop selalu; di HP halaman diskalakan seperti "situs desktop"
+#  HP       : layout HP selalu (peta tinggi, kolom bertumpuk, kontrol besar), juga di komputer
+#  Pilihan disimpan di browser (localStorage) dan dipakai lagi saat dibuka berikutnya.
+MODE_JS <- "
+var BantulMode = (function(){
+  var KEY = 'bantul_mode', cur = 'auto', lastVp = null, lastW = 0;
+  var LABEL = {auto: 'Otomatis', desktop: 'Desktop', hp: 'HP'};
+  try { var s = localStorage.getItem(KEY); if (s && LABEL[s]) cur = s; } catch (e) {}
+  function isPhone(){
+    var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    var sw = Math.min(window.screen.width, window.screen.height);
+    return coarse ? sw < 768 : window.innerWidth < 768;
+  }
+  function setViewport(c){
+    if (c === lastVp) return;
+    lastVp = c;
+    var ms = document.querySelectorAll('meta[name=viewport]');
+    if (!ms.length) {
+      var m = document.createElement('meta'); m.name = 'viewport'; document.head.appendChild(m); ms = [m];
+    }
+    for (var i = 0; i < ms.length; i++) ms[i].setAttribute('content', c);
+  }
+  function apply(){
+    var phone = isPhone(), b = document.body;
+    var hp = (cur === 'hp') || (cur === 'auto' && phone);
+    setViewport(cur === 'desktop' && phone ? 'width=1200' : 'width=device-width, initial-scale=1');
+    b.classList.toggle('mode-hp', hp);
+    // jendela lebar + mode HP: sidebar disembunyikan (di layar < 768 px AdminLTE sudah menyembunyikannya)
+    if (hp && window.innerWidth >= 768) {
+      if (!b.classList.contains('sidebar-collapse')) { b.classList.add('sidebar-collapse'); b.setAttribute('data-hpc', '1'); }
+    } else if (b.getAttribute('data-hpc')) {
+      b.classList.remove('sidebar-collapse'); b.removeAttribute('data-hpc');
+    }
+    $('#mode_label').text(LABEL[cur]);
+    $('#mode_menu a[data-mode]').parent().removeClass('active');
+    $('#mode_menu a[data-mode=' + cur + ']').parent().addClass('active');
+    clearTimeout(apply.t);
+    apply.t = setTimeout(function(){ window.dispatchEvent(new Event('resize')); }, 300);  // peta & grafik menyesuaikan
+  }
+  function onResize(){
+    if (window.innerWidth === lastW) return;
+    lastW = window.innerWidth;
+    clearTimeout(onResize.t); onResize.t = setTimeout(apply, 150);
+  }
+  window.addEventListener('resize', onResize);
+  window.addEventListener('orientationchange', function(){ setTimeout(apply, 250); });
+  $(function(){ lastW = window.innerWidth; apply(); });
+  return { set: function(m){ cur = m; try { localStorage.setItem(KEY, m); } catch (e) {} apply(); } };
+})();
+"
+
 ui <- dashboardPage(
   skin = "green",
-  dashboardHeader(title = "Bantul GIS", titleWidth = 320),
+  dashboardHeader(
+    title = "Bantul GIS", titleWidth = 320,
+    tags$li(class = "dropdown", id = "mode_menu",
+            tags$a(href = "#", class = "dropdown-toggle", `data-toggle` = "dropdown", role = "button",
+                   icon("desktop"), tags$span(class = "mode-text", HTML("&nbsp;Tampilan: ")),
+                   tags$b(id = "mode_label", "Otomatis"), tags$span(class = "caret")),
+            tags$ul(class = "dropdown-menu",
+                    tags$li(tags$a(href = "#", `data-mode` = "auto",
+                                   onclick = "BantulMode.set('auto'); return false;", "Otomatis")),
+                    tags$li(tags$a(href = "#", `data-mode` = "desktop",
+                                   onclick = "BantulMode.set('desktop'); return false;", "Mode Desktop")),
+                    tags$li(tags$a(href = "#", `data-mode` = "hp",
+                                   onclick = "BantulMode.set('hp'); return false;", "Mode HP"))))),
   dashboardSidebar(
     width = 320,
     sidebarMenu(
@@ -1087,7 +1187,9 @@ ui <- dashboardPage(
     )
   ),
   dashboardBody(
-    tags$head(tags$style(HTML(css)),
+    tags$head(tags$meta(name = "viewport", content = "width=device-width, initial-scale=1"),
+              tags$style(HTML(css)),
+              tags$script(HTML(MODE_JS)),
               tags$script(HTML("
 $(document).on('shiny:connected', function(){ setDT(); setInterval(setDT, 15000); });
 function setDT(){
@@ -1180,6 +1282,8 @@ $(document).on('mousedown', '#dl_peta, #btn_prev', setDT);
                     downloadButton("dl_peta", "Unduh Peta", class = "btn-success"),
                     NULL),
                 box(width = 8, status = "success", solidHeader = TRUE, title = "Pratinjau Peta Cetak",
+                    div(class = "hp-only", style = "font-size:12px;color:#555;margin-bottom:6px;",
+                        icon("hand-pointer"), "peta cetak"),
                     plotOutput("preview", width = "100%", height = "auto")))),
       tabItem("unduh",
               fluidRow(
@@ -1413,7 +1517,7 @@ server <- function(input, output, session) {
   
   # --- detail kecamatan -----------------------------------------------------
   output$kec_name <- renderText({
-    if (is.null(selected())) "Kondisi netral - klik sebuah kecamatan pada peta"
+    if (is.null(selected())) "Klik sebuah kecamatan pada peta"
     else paste("Kecamatan", selected())
   })
   
