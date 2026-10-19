@@ -10,7 +10,7 @@
 ![Sentinel-2](https://img.shields.io/badge/Sentinel--2-L2A-0277bd)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-### [🌐 Buka Aplikasi Web](https://nisrinsafina.shinyapps.io/bantul-landcover/) · [📖 Langkah Pengerjaan](docs/LANGKAH_PENGERJAAN.md) · [📝 Riwayat Perubahan](CHANGELOG.md)
+### [🌐 WebGIS](https://nisrinsafina.shinyapps.io/bantul-landcover/) · [📖 Working steps](docs/LANGKAH_PENGERJAAN.md) 
 
 </div>
 
