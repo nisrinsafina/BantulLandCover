@@ -4,12 +4,6 @@
 
 **Analisis indeks spektral (NDVI, NDBI, NDWI, NDCI) dan klasifikasi tutupan lahan dari citra Sentinel-2 Level-2A, disajikan dalam aplikasi WebGIS interaktif berbasis R Shiny dan Leaflet.**
 
-![R](https://img.shields.io/badge/R-4.x-276DC3?logo=r&logoColor=white)
-![Shiny](https://img.shields.io/badge/Shiny-dashboard-1b5e20)
-![Leaflet](https://img.shields.io/badge/Leaflet-interaktif-199900?logo=leaflet&logoColor=white)
-![Sentinel-2](https://img.shields.io/badge/Sentinel--2-L2A-0277bd)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
-
 ### [🌐 WebGIS](https://nisrinsafina.shinyapps.io/bantul-landcover/) · [📖 Working steps](docs/LANGKAH_PENGERJAAN.md) 
 
 </div>
