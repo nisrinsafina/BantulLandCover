@@ -105,7 +105,7 @@ output_files <- file.path(
 # FALSE = Pakai hasil crop yang sudah ada
 # TRUE  = Proses ulang semua band
 
-force_reprocess <- FALSE
+force_reprocess <- TRUE     # GANTI SESUAI KEBUTUHAN!!!
 
 file_metadata <- list.files(dir_sentinel, pattern = "^MTD_MSIL2A\\.xml$", full.names = TRUE)
 if (length(file_metadata) > 0) {
